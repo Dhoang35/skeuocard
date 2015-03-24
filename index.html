@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/demo.css">
     <script src="javascripts/vendor/cssua.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -19,6 +20,10 @@
         <h1>Skeuocard</h1>
         <p>Skeuocard progressively enhances credit card inputs to provide a skeuomorphic interface.</p>
         <p>Learn more about the concepts behind the design: "<a href="http://kenkeiter.com/2013/07/21/redesigning-credit-card-inputs/" target="_blank">Redesigning The Credit Card Input</a>" by <a href="http://kenkeiter.com/">Ken Keiter</a>.</p>
+        <p>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-text="#Skeuocard is a new take on credit card inputs!" data-via="kenkeiter" data-size="large">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </p>
         <p class="view">
           <a href="https://github.com/kenkeiter/skeuocard">View the Project on GitHub <small>kenkeiter/skeuocard</small></a>
         </p>
@@ -34,6 +39,8 @@
           <div class="credit-card-input no-js" id="skeuocard">
             <p class="no-support-warning">
               Either you have Javascript disabled, or you're using an unsupported browser, amigo! That's why you're seeing this old-school credit card input form instead of a fancy new Skeuocard. On the other hand, at least you know it gracefully degrades...
+              <br />
+              <a href="#" id="enable-anyway-btn">Never tell me the odds! Enable it anyway.</a>
             </p>
             <label for="cc_type">Card Type</label>
             <select name="cc_type">
@@ -101,7 +108,7 @@ Diners Club: 38111111111119
 
     <script src="javascripts/vendor/demo.fix.js"></script>
     <script src="javascripts/vendor/jquery-2.0.3.min.js"></script>
-    <script src="javascripts/skeuocard.js"></script>
+    <script src="javascripts/skeuocard.min.js"></script>
     <script>
 
       $(document).ready(function(){
@@ -117,8 +124,24 @@ Diners Club: 38111111111119
             debug: false
           });
         }
+        $('#enable-anyway-btn').click(function(){
+          window.card = new Skeuocard($("#skeuocard"), {
+            debug: false
+          });
+        });
       });
 
+    </script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17099432-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
     </script>
   </body>
 </html>
